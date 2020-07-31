@@ -27,6 +27,7 @@ dependencies {
         exclude("org.yaml", "snakeyaml")
     }
     implementation("de.themoep:minedown:1.6.1-SNAPSHOT")
+    implementation("de.themoep:inventorygui:1.4.2-SNAPSHOT")
 }
 
 tasks {

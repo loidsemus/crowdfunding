@@ -19,4 +19,9 @@ class LanguageConfig(dir: File) : YamlConfiguration(
     File(dir, "messages.yml").toPath(),
     YamlProperties.builder().addDefaultConverter(Message::class.java, MessageConverter())
         .setFormatter(FieldNameFormatters.LOWER_UNDERSCORE).build()
-)
+) {
+
+    var mainMenuHeader = Message("Crowdfunding")
+    var newCampaign = Message("&a&lNew campaign")
+
+}

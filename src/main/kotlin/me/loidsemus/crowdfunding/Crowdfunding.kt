@@ -14,6 +14,7 @@ class Crowdfunding : JavaPlugin() {
     val mainConfig = MainConfig(dataFolder)
     val messages = LanguageConfig(dataFolder)
     lateinit var dataSource: DataSource private set
+    lateinit var campaignManager: CampaignManager private set
 
     override fun onEnable() {
         createFiles()
@@ -21,6 +22,8 @@ class Crowdfunding : JavaPlugin() {
         messages.loadAndSave()
 
         dataSource = SQLiteDataSource(this)
+
+        campaignManager = CampaignManager()
 
         val commandManager = PaperCommandManager(this)
         commandManager.registerCommand(MainCommand(this))
