@@ -38,6 +38,8 @@ tasks {
         relocate("co.aikar.commands", base + "acf")
         relocate("de.exlll.configlib", base + "configlib")
         relocate("de.themoep.minedown", base + "minedown")
+        relocate("de.themoep.inventorygui", base + "inventorygui")
+        relocate("com.zaxxer.hikari", base + "hikari")
 
         archiveFileName.set(project.name + ".jar")
         minimize()
