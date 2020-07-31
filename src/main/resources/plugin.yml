@@ -1,0 +1,6 @@
+name: kotlin-paper-plugin
+main: me.loidsemus.plugin.Template
+version: @version@
+author: "loidsemus"
+api-version: "1.13"
+description: Kotlin paper plugin template
