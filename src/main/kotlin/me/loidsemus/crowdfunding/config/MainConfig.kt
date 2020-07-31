@@ -1,4 +1,4 @@
-package me.loidsemus.plugin.config
+package me.loidsemus.crowdfunding.config
 
 import de.exlll.configlib.configs.yaml.YamlConfiguration
 import java.io.File

@@ -1,15 +1,15 @@
-package me.loidsemus.plugin
+package me.loidsemus.crowdfunding
 
 import co.aikar.commands.PaperCommandManager
 import co.aikar.idb.DB
-import me.loidsemus.plugin.commands.MainCommand
-import me.loidsemus.plugin.config.MainConfig
-import me.loidsemus.plugin.config.lang.LanguageConfig
-import me.loidsemus.plugin.data.DataSource
-import me.loidsemus.plugin.data.SQLiteDataSource
+import me.loidsemus.crowdfunding.commands.MainCommand
+import me.loidsemus.crowdfunding.config.MainConfig
+import me.loidsemus.crowdfunding.config.lang.LanguageConfig
+import me.loidsemus.crowdfunding.data.DataSource
+import me.loidsemus.crowdfunding.data.SQLiteDataSource
 import org.bukkit.plugin.java.JavaPlugin
 
-class Template : JavaPlugin() {
+class Crowdfunding : JavaPlugin() {
 
     val mainConfig = MainConfig(dataFolder)
     val messages = LanguageConfig(dataFolder)

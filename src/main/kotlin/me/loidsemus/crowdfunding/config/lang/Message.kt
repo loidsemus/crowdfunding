@@ -1,4 +1,4 @@
-package me.loidsemus.plugin.config.lang
+package me.loidsemus.crowdfunding.config.lang
 
 import de.themoep.minedown.MineDown
 import net.md_5.bungee.api.chat.BaseComponent

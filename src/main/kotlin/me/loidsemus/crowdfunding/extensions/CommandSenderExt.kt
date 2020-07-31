@@ -1,6 +1,6 @@
-package me.loidsemus.plugin.extensions
+package me.loidsemus.crowdfunding.extensions
 
-import me.loidsemus.plugin.config.lang.Message
+import me.loidsemus.crowdfunding.config.lang.Message
 import net.md_5.bungee.api.chat.BaseComponent
 import org.bukkit.command.CommandSender
 

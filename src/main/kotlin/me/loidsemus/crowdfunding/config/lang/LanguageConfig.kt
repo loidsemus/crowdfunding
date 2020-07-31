@@ -1,4 +1,4 @@
-package me.loidsemus.plugin.config.lang
+package me.loidsemus.crowdfunding.config.lang
 
 import de.exlll.configlib.annotation.Comment
 import de.exlll.configlib.configs.yaml.YamlConfiguration

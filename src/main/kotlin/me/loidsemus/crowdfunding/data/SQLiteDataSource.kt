@@ -1,13 +1,13 @@
-package me.loidsemus.plugin.data
+package me.loidsemus.crowdfunding.data
 
 import co.aikar.idb.DB
 import co.aikar.idb.Database
 import co.aikar.idb.DatabaseOptions
 import co.aikar.idb.PooledDatabaseOptions
-import me.loidsemus.plugin.Template
+import me.loidsemus.crowdfunding.Crowdfunding
 import java.io.File
 
-class SQLiteDataSource(plugin: Template) : DataSource(plugin) {
+class SQLiteDataSource(plugin: Crowdfunding) : DataSource(plugin) {
 
     private val database: Database
 

@@ -1,6 +1,6 @@
-name: kotlin-paper-plugin
-main: me.loidsemus.plugin.Template
+name: Crowdfunding
+main: me.loidsemus.crowdfunding.Crowdfunding
 version: @version@
 author: "loidsemus"
 api-version: "1.13"
-description: Kotlin paper plugin template
+description: Crowdfunding plugin
