@@ -1,2 +1,2 @@
-rootProject.name = "Crowdfunding"
+rootProject.name = "crowdfunding"
 

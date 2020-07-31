@@ -35,7 +35,7 @@ tasks {
         val base = "${project.group}.${rootProject.name}.libs."
 
         relocate("co.aikar.idb", base + "idb")
-        relocate("co.aikar.commands", base + "idb")
+        relocate("co.aikar.commands", base + "acf")
         relocate("de.exlll.configlib", base + "configlib")
         relocate("de.themoep.minedown", base + "minedown")
 
