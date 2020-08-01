@@ -8,7 +8,7 @@ import me.loidsemus.crowdfunding.gui.MainMenu
 import org.bukkit.entity.Player
 
 @Suppress("unused")
-@CommandAlias("crowdfunding")
+@CommandAlias("crowdfunding|crowdf|cfunding")
 class MainCommand(private val plugin: Crowdfunding) : BaseCommand() {
 
     @Default
