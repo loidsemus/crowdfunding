@@ -8,6 +8,7 @@ import me.loidsemus.crowdfunding.config.lang.LanguageConfig
 import me.loidsemus.crowdfunding.data.DataSource
 import me.loidsemus.crowdfunding.data.SQLiteDataSource
 import org.bukkit.plugin.java.JavaPlugin
+import java.math.BigDecimal
 
 class Crowdfunding : JavaPlugin() {
 
@@ -17,16 +18,22 @@ class Crowdfunding : JavaPlugin() {
     lateinit var campaignManager: CampaignManager private set
 
     override fun onEnable() {
+        val startTime = System.currentTimeMillis()
         createFiles()
         mainConfig.loadAndSave()
         messages.loadAndSave()
 
         dataSource = SQLiteDataSource(this)
-
         campaignManager = CampaignManager()
+        logger.info("Loading campaigns...")
+        for (campaign in dataSource.getAllCampaigns()) {
+            campaignManager.addCampaign(campaign)
+        }
 
         val commandManager = PaperCommandManager(this)
         commandManager.registerCommand(MainCommand(this))
+        val totalTime = System.currentTimeMillis() - startTime
+        logger.info("Plugin startup took ${totalTime}ms (${BigDecimal(totalTime).divide(BigDecimal(1000))}s)")
     }
 
     override fun onDisable() {

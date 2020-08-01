@@ -4,22 +4,18 @@ import me.loidsemus.crowdfunding.data.Campaign
 
 class CampaignManager {
 
-    private val campaigns = mutableMapOf<Int, Campaign>()
+    private val campaigns = mutableListOf<Campaign>()
 
     fun addCampaign(campaign: Campaign) {
-        campaigns[campaign.id] = campaign
+        campaigns += campaign
     }
 
     fun removeCampaign(campaign: Campaign) {
-        campaigns.remove(campaign.id)
-    }
-
-    fun removeCampaign(id: Int) {
-        campaigns.remove(id)
+        campaigns.remove(campaign)
     }
 
     fun getAllCampaigns(): List<Campaign> {
-        return campaigns.values.toList()
+        return campaigns.toList()
     }
 
 }

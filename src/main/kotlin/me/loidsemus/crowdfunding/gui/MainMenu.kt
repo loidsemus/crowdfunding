@@ -2,6 +2,9 @@ package me.loidsemus.crowdfunding.gui
 
 import de.themoep.inventorygui.*
 import me.loidsemus.crowdfunding.Crowdfunding
+import me.loidsemus.crowdfunding.actions.CampaignAction
+import me.loidsemus.crowdfunding.actions.CommandAction
+import me.loidsemus.crowdfunding.data.Campaign
 import me.loidsemus.crowdfunding.data.State
 import org.bukkit.Material
 import org.bukkit.entity.Player
@@ -42,6 +45,19 @@ class MainMenu(plugin: Crowdfunding) : InventoryGui(plugin, plugin.messages.main
 
         addElement(StaticGuiElement('c', ItemStack(Material.EMERALD), GuiElement.Action {
             // TODO: Create new campaign
+            val actions = listOf<CampaignAction<*>>(
+                CommandAction(null, "say hello")
+            )
+            val campaign = Campaign(
+                null,
+                it.event.whoClicked.uniqueId,
+                "test name",
+                "test desc",
+                State.ACTIVE,
+                actions.toMutableList()
+            )
+            plugin.dataSource.saveCampaign(campaign)
+            plugin.campaignManager.addCampaign(campaign)
             true
         }, plugin.messages.newCampaign.getColoredOnly()))
 

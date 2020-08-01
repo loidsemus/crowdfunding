@@ -1,13 +1,29 @@
 package me.loidsemus.crowdfunding.data
 
-import me.loidsemus.crowdfunding.actions.Action
+import co.aikar.idb.DbRow
+import me.loidsemus.crowdfunding.actions.CampaignAction
 import java.util.*
 
 data class Campaign(
-    val id: Int,
+    var id: Int?,
     val creator: UUID,
-    val name: String,
-    val description: String,
-    val state: State,
-    val actions: MutableList<Action<*>>
-)
+    var name: String,
+    var description: String,
+    var state: State,
+    val actions: MutableList<CampaignAction<*>>
+) {
+
+    companion object {
+        fun of(row: DbRow, actions: List<CampaignAction<*>>): Campaign {
+            return Campaign(
+                row.getInt("id"),
+                UUID.fromString(row.getString("creator")),
+                row.getString("name"),
+                row.getString("description"),
+                State.valueOf(row.getString("state")),
+                actions.toMutableList()
+            )
+        }
+    }
+
+}
