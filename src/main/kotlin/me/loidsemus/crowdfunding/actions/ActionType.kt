@@ -1,4 +1,4 @@
-package me.loidsemus.crowdfunding.actions;
+package me.loidsemus.crowdfunding.actions
 
 enum class ActionType {
     COMMAND {

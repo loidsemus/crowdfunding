@@ -11,10 +11,10 @@ class CampaignManager {
     }
 
     fun removeCampaign(campaign: Campaign) {
-        remove(campaign.id!!)
+        removeCampaign(campaign.id!!)
     }
 
-    fun remove(id: Int) {
+    fun removeCampaign(id: Int) {
         campaigns.remove(id)
     }
 

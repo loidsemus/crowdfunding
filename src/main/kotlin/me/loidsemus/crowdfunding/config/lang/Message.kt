@@ -2,8 +2,6 @@ package me.loidsemus.crowdfunding.config.lang
 
 import de.themoep.minedown.MineDown
 import net.md_5.bungee.api.chat.BaseComponent
-import org.apache.commons.lang.StringUtils
-import org.bukkit.ChatColor
 
 class Message(val text: String) {
 
