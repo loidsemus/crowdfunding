@@ -28,6 +28,8 @@ class SQLiteDataSource(plugin: Crowdfunding) : DataSource() {
             creator varchar(36),
             name text,
             description text,
+            raised real,
+            goal real,
             state text
             );
         """.trimIndent()
@@ -71,12 +73,11 @@ class SQLiteDataSource(plugin: Crowdfunding) : DataSource() {
     override fun saveCampaign(campaign: Campaign) {
         //language=SQLite
         val insertedCampaignId = database.executeInsert(
-            """insert into crowdfunding_campaigns (id, creator, name, description, state) values (?, ?, ?, ?, ?)
-            on conflict(id) do update set name = ?, description = ?, state = ?;""".trimMargin(),
-            campaign.id, campaign.creator, campaign.name, campaign.description, campaign.state.name,
-            campaign.name, campaign.description, campaign.state.name
+            """insert into crowdfunding_campaigns (id, creator, name, description, raised, goal, state) values (?, ?, ?, ?, ?, ?, ?)
+            on conflict(id) do update set name = ?, description = ?, raised = ?, goal = ?, state = ?;""".trimMargin(),
+            campaign.id, campaign.creator, campaign.name, campaign.description, campaign.raised, campaign.goal, campaign.state.name,
+            campaign.name, campaign.description, campaign.raised, campaign.goal, campaign.state.name
         )
-        println(insertedCampaignId)
         for (action in campaign.actions) {
             //language=SQLite
             val insertedActionId = database.executeInsert(

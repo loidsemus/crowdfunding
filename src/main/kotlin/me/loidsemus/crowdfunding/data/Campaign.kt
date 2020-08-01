@@ -9,6 +9,8 @@ data class Campaign(
     val creator: UUID,
     var name: String,
     var description: String,
+    var raised: Double,
+    var goal:Double,
     var state: State,
     val actions: MutableList<CampaignAction<*>>
 ) {
@@ -20,6 +22,8 @@ data class Campaign(
                 UUID.fromString(row.getString("creator")),
                 row.getString("name"),
                 row.getString("description"),
+                row.getDbl("raised"),
+                row.getDbl("goal"),
                 State.valueOf(row.getString("state")),
                 actions.toMutableList()
             )
